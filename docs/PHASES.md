@@ -143,7 +143,42 @@ Supabase remain unverified. Refresh/manual actions load persisted state; schedul
 execution remains Phase 6 work. Browser checks are Chromium desktop/mobile,
 not an all-browser accessibility or security certification.
 
-## Next: Phase 6
-Authenticated scheduling/worker, Vercel configuration, hosted environment setup,
-monitoring and backup/recovery validation. Deployment/remote migrations still
-require explicit approval. Phase 7 remains the full caretaker experiment/report.
+## Phase 6 — scheduling/deployment preparation checkpoint complete locally
+
+- Committed/pushed the completed Phase 0–5 baseline to origin/main as 12760a2
+  before Phase 6 work, as requested.
+- Added a dedicated-secret, pinned-world stateless cron/worker endpoint and private
+  health endpoint. Cron slots and explicit worker IDs deduplicate across instances.
+- Added persisted attempt/error/result records. Success commits atomically with
+  state, receipt and journal; failed/interrupted work can retry safely. Catch-up
+  remains capped, skips paused/test/archived worlds and exposes remaining backlog.
+- Batched journal inserts and bounded SQL lock/statement/idle waits for serverless
+  operation. No LLM work is part of a simulation transaction or scheduler call.
+- Added verified remote TLS and new-connection runtime-role checks. A real local
+  dedicated app login was accepted; a privileged session was rejected. Pooler
+  connections need inherited membership rather than startup SET ROLE options.
+- Prepared Vercel five-minute cron configuration, one-shot HTTP worker and UTC
+  systemd examples. Timer calendar syntax checked; no worker service installed.
+- Added private operator scheduler history/failure display, health CLI, read-only
+  deployment preflight and reviewed restricted-role bootstrap SQL. Remote owner
+  tooling requires prior approval plus --remote-approved; no such remote operation
+  was run. Test-world controls remain local-only.
+- Strict TypeScript and production build passed. Full local Vitest: 69 tests passed.
+  Final desktop/mobile Chromium suite: 12 tests passed, including scheduler errors.
+- Real HTTP checks passed for missing credentials, standalone worker, stable POST
+  retries, Vercel-style GET slot retries, preflight and private health. No paid call.
+- Full backup/restore rehearsal passed with SHA-256 artifact verification, paused
+  source, isolated destination, fingerprints for all 24 world-scoped tables and an
+  existing tick replay that changed neither state nor history.
+
+DEPLOYMENT.md provides concrete approved Supabase/Vercel setup, external scheduling,
+plan/cadence checks, monitoring, backup/restore and credential cutover instructions.
+Hosted Supabase/pooler/TLS behavior and actual Vercel plan/cron/deployment remain
+unverified until a target is securely configured and those operations are approved.
+No hosted resource, paid request, remote migration, deployment command or environment
+configuration publication was performed. This is local readiness evidence, not a
+claim of a running production deployment or configured offsite backup retention.
+
+## Next: Phase 7
+Reproducible 30-village-day caretaker experiment, complete metrics, readable
+chronicle and report. Hosted deployment remains a separate explicitly approved step.

@@ -1,12 +1,13 @@
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
+import { transportConfig } from '../src/server/runtime-pool';
 import { z } from 'zod';
 import { tokenHash } from '../src/repositories/caretaker';
 async function main(){
- const url=process.env.DATABASE_URL;if(!url||!['localhost','127.0.0.1','[::1]'].includes(new URL(url).hostname))throw Error('Credential provisioning tool requires a local database');
+ const url=process.env.DATABASE_URL;if(!url||(!['localhost','127.0.0.1','[::1]'].includes(new URL(url).hostname)&&!process.argv.includes('--remote-approved')))throw Error('Remote credential changes require explicit approval and --remote-approved');
  const role=z.enum(['caretaker','narrator','operator']).parse(process.env.AGENT_ROLE??'caretaker');
  const world=z.uuid().parse(process.env.WORLD_ID);const actor=process.env.AGENT_ACTOR_ID??(role==='caretaker'?process.env.CARETAKER_ACTOR_ID:undefined)??`local-${role}`;
- const p=new Pool({connectionString:url});
+ const p=new Pool({...transportConfig(url),max:1,connectionTimeoutMillis:5000});
  try{
   if(process.argv[2]==='revoke'){
    const id=z.uuid().parse(process.env.CREDENTIAL_ID);await p.query('UPDATE little_worlds.agent_credentials SET revoked=true WHERE world_id=$1 AND id=$2',[world,id]);console.log('Credential revoked (if present)');return;
@@ -17,4 +18,4 @@ async function main(){
   if(!result.rowCount)throw Error('Caretaker actor does not exist');console.log(`Credential registered: ${id} (expires in 30 days; token not displayed)`);
  }finally{await p.end();}
 }
-main().catch(()=>{console.error('Credential operation failed. Check local DATABASE_URL, WORLD_ID, actor and credential environment inputs.');process.exitCode=1;});
+main().catch(()=>{console.error('Credential operation failed. Check DATABASE_URL, remote approval, WORLD_ID, actor and credential inputs.');process.exitCode=1;});

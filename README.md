@@ -1,10 +1,11 @@
 # Little Worlds
 
 A private virtual village with three original creatures and a persistent history.
-**Phases 0–5 are implemented and validated locally.** PostgreSQL is authoritative;
+**Phases 0–6 are implemented and validated locally.** PostgreSQL is authoritative;
 the deterministic simulation works without AI. Caretaker actions, optional narrator
 proposals, the Glowing Seed quest and the private operator website are available.
-Scheduling, hosted deployment and the full caretaker experiment are later phases.
+Scheduling/worker and deployment configuration are prepared; hosted validation,
+deployment approval and the full caretaker experiment remain outstanding.
 
 ## Open the private village
 
@@ -36,3 +37,7 @@ fixture. This is not the full Phase 7 caretaker experiment.
 
 No remote migrations, paid AI calls or deployment have been performed. Groq was
 tested with mocks only; hosted Supabase remains unverified.
+
+[DEPLOYMENT.md](DEPLOYMENT.md) covers the authenticated scheduler, Vercel/systemd
+configuration, restricted Supabase login, preflight and verified recovery. Nothing
+is deployed automatically; remote operations require explicit approval.

@@ -56,3 +56,11 @@ test('confirmed local reset preserves old journal and root revocation closes der
  const response=await page.request.get('/api/operator');const state=(await response.json()).result;expect(state.world.id).not.toBe(fixture.world);expect(state.world.tick).toBe(0);expect((await repo.read(fixture.world)).journal).toHaveLength(3);
  await admin.query('UPDATE little_worlds.agent_credentials SET revoked=true WHERE id=$1',[fixture.operatorId]);await page.reload();await expect(page.getByRole('heading',{name:'Welcome to the village.'})).toBeVisible();
 });
+
+test('operator can inspect persisted scheduler failures without exposing credentials',async({page})=>{
+ await admin.query("INSERT INTO little_worlds.scheduler_runs(world_id,request_id,status,finished_at,error_code) VALUES($1,'ui-failure-fixture','failed',now(),'TICK_FAILED')",[fixture.world]);
+ await login(page);await page.getByRole('button',{name:/Operator desk/}).click();
+ const section=page.locator('section').filter({has:page.getByRole('heading',{name:'Simulation scheduling',exact:true})});
+ await expect(section.getByText('Failed',{exact:true})).toBeVisible();await expect(section.getByText(/TICK FAILED/)).toBeVisible();
+ expect(await section.textContent()).not.toContain(fixture.operator);
+});

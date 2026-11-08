@@ -5,7 +5,8 @@ creature profiles, paginated village journal, quest/clue journal, narrator revie
 AI usage/error records and simulation controls. All displayed world state comes
 from PostgreSQL; there is no public demo or fabricated live data. The clock is a
 persisted simulation clock, refreshed on request, not an authoritative browser timer.
-Scheduling/deployment remain Phase 6; no service is deployed by these instructions.
+Phase 6 supplies scheduling configuration and a one-shot worker (DEPLOYMENT.md);
+no service is deployed by these instructions.
 
 ## Start a marked local test village
 
@@ -178,7 +179,11 @@ are local, generated and revoked. No paid AI calls are part of these checks.
 - **No test controls:** confirm you created a marked test world and enabled the
   local flag against loopback PostgreSQL; live worlds intentionally do not qualify.
 - **No new journal entries:** a live tick may not yet be due, or the world is paused.
-  Scheduled execution is Phase 6; test worlds can use explicit accelerated ticks.
+  Configure the Phase 6 scheduler from DEPLOYMENT.md, or use explicit test ticks.
 - **Unconfirmed operation:** use “Retry same operation”; do not invent a new ID.
 - **Proposal rejected after approval:** current co-location, pacing or prerequisites
   changed. The rejection is a recorded safe decision, not a partially applied event.
+
+The operator desk also displays persisted scheduler outcomes, attempt counts,
+backlog and sanitized failures. Endpoint configuration alone is not a running-timer
+claim. Private health and deployment/recovery instructions are in DEPLOYMENT.md.

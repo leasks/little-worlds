@@ -58,3 +58,12 @@ when hosting. Verify database TLS, role membership, ingress/network limits and
 backups before deployment. Coarse invalid-token ingress throttling remains a
 hosting requirement. No hosted deployment, remote migration, live Groq call,
 formal security audit or accessibility certification is claimed.
+
+Phase 6 separates the scheduler's environment secret from agent/operator access,
+pins its world server-side, validates every request and bounds each catch-up call.
+Successful scheduler logs share the tick transaction; error responses and records
+contain only sanitized codes. Remote DB connections enforce TLS verification and
+reject privileged/nonmember/owner logins before queries. No production connection
+or deployment was made. Migration/provisioning scripts remain local by default;
+--remote-approved is an operator attestation after approval, not a permission
+escalation or automatic runtime grant. See DEPLOYMENT.md for review/cutover rules.

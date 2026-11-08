@@ -1,8 +1,9 @@
 # Little Worlds architecture and implementation plan
 
-Current status: Phases 0–5 are validated locally. The original Phase 0 plan below
+Current status: Phases 0–6 are validated locally. The original Phase 0 plan below
 is retained; later checkpoint updates and OPERATOR.md/API.md describe the current
-contracts and working interface. Scheduling/deployment remain pending.
+contracts and working interface. Scheduling/deployment configuration is prepared; hosted validation/deployment
+remain pending approval and target configuration.
 
 ## Product and boundaries
 A private, cosy persistent village whose rules remain authoritative without AI.
@@ -138,3 +139,18 @@ configuration. Confirmed test reset creates a fresh isolated test village and
 preserves the old world/history read-only, instead of deleting append-only data.
 Scheduling/deployment remain Phase 6 work. Playwright uses local DB fixtures and
 real Chromium to validate login, map, profiles, controls, journals and quests.
+
+## Phase 6 implementation checkpoint
+
+A separate CRON_SECRET authenticates a stateless scheduler pinned to CRON_WORLD_ID.
+GET cron calls deduplicate by persisted interval/real-time slot; POST worker calls
+carry a stable request ID but never authoritative timestamps or world selection.
+Each call bounds catch-up, honors pause/archive/test isolation, and records an
+attempt before the tick transaction, then commits its successful run receipt with
+state/events. Interrupted attempts remain visible and safe to retry. Private health
+and operator summaries expose lag/failures without world internals or credentials.
+Journal inserts are batched for serverless database latency. Hosted connections
+require verified TLS plus a dedicated restricted inherited runtime role; local
+admin URLs remain narrowed via SET ROLE. Vercel configuration and one-shot HTTP
+worker are prepared, not deployed. Backup/restore and runtime-role bootstrap are
+validated locally; remote migration/deployment still require explicit approval.

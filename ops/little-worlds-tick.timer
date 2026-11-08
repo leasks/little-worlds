@@ -1,0 +1,11 @@
+[Unit]
+Description=Advance Little Worlds every five real minutes
+
+[Timer]
+OnCalendar=*-*-* *:00/5:00 UTC
+AccuracySec=5s
+Persistent=true
+Unit=little-worlds-tick.service
+
+[Install]
+WantedBy=timers.target

@@ -27,7 +27,7 @@ export async function operatorApi(req:Request,kind:'login'|'logout'|'snapshot'|'
   const token=readSessionCookie(req);if(!token)throw new ApiError('UNAUTHORIZED',401,'Sign in to continue');const repo=getRepository();
   if(kind==='logout'){await repo.logout(token);const response=json({ok:true});response.headers.set('Set-Cookie',cookie(req,''));return response;}
   const session=await repo.session(token),p=session.principal;
-  if(kind==='snapshot')return json({ok:true,result:{...await repo.snapshot(p),localTools:localToolsEnabled(),aiConfigured:Boolean(process.env.GROQ_API_KEY&&process.env.GROQ_MODEL)}});
+  if(kind==='snapshot')return json({ok:true,result:{...await repo.snapshot(p),localTools:localToolsEnabled(),aiConfigured:Boolean(process.env.GROQ_API_KEY&&process.env.GROQ_MODEL),schedulerConfigured:Boolean(process.env.CRON_SECRET&&process.env.CRON_WORLD_ID?.toLowerCase()===p.worldId)}});
   if(kind==='journal'){
    const query=journalFiltersSchema.safeParse(Object.fromEntries(new URL(req.url).searchParams));if(!query.success)throw new ApiError('INVALID_FILTER',400,'Invalid journal filter');return json({ok:true,result:await repo.journal(p,query.data)});
   }

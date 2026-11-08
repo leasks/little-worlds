@@ -23,7 +23,8 @@ npm run typecheck
 npm test
 ```
 
-`db:migrate` only accepts loopback destinations, applies sorted SQL files in one
+`db:migrate` defaults to loopback destinations; remote owner operations require
+prior explicit approval and the --remote-approved flag (see DEPLOYMENT.md). It applies sorted SQL files in one
 transaction under an advisory lock, and verifies SHA-256 checksums on subsequent
 runs. Do not edit applied migrations. Migration credentials require CREATE ROLE,
 CREATE SCHEMA and table ownership. `db:seed` creates/preserves the First Village at
@@ -163,3 +164,15 @@ Confirmed test reset creates a fresh world rather than clearing tables. The old
 world is archived read-only, preserving history and avoiding clock regression or
 disabling append-only protections. Pause/resume is persisted; no in-process lock or
 browser timer is authoritative. See OPERATOR.md for exact behavior and setup.
+
+## Phase 6 additions
+
+Migration 0006 adds RLS-protected scheduler attempt/results and indexes. Successful
+scheduler results commit with the tick transaction; interrupted attempts remain
+visible and safe to retry. Tick journals now insert in one validated batch, with
+unchanged foreign keys/constraints/rollback behavior. Transactions have lock,
+statement and idle timeouts. Remote runtime connections require verified TLS and
+restricted inherited role membership; privileged/owner connections fail before
+application queries. The application no longer requires remote startup SET ROLE
+options. Reviewed role bootstrap, migration flags, preflight, monitoring and full
+restore procedures are in DEPLOYMENT.md; no remote migration was performed.

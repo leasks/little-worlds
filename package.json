@@ -19,7 +19,12 @@
     "narrator:settings": "tsx scripts/narrative-settings.ts",
     "test:narrative-http": "tsx scripts/smoke-narrative.ts",
     "test:browser": "tsx scripts/test-browser.ts",
-    "db:test-world": "tsx scripts/test-world.ts"
+    "db:test-world": "tsx scripts/test-world.ts",
+    "tick": "tsx scripts/tick-worker.ts",
+    "deploy:preflight": "tsx scripts/preflight.ts",
+    "test:scheduler-http": "tsx scripts/smoke-scheduler.ts",
+    "recovery:check": "tsx scripts/recovery-check.ts",
+    "scheduler:health": "tsx scripts/scheduler-health.ts"
   },
   "dependencies": {
     "next": "^16.0.0",
@@ -39,5 +44,8 @@
     "tsx": "^4.20.0",
     "typescript": "^5.9.0",
     "vitest": "^4.0.0"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

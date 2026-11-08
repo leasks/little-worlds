@@ -83,7 +83,8 @@ rate-limit rules from API.md apply. No operator browser login exists yet.
 
 The local credential tool now accepts AGENT_ROLE (caretaker/narrator/operator).
 Generate different secrets for narrator and operator; never reuse the caretaker's
-secret. Provisioning remains local-only and requires migration-owner DB access:
+secret. Provisioning defaults to local-only and requires migration-owner DB access;
+approved remote operations additionally require --remote-approved (DEPLOYMENT.md):
 
 ```sh
 # DATABASE_URL and WORLD_ID must already name the migrated local world.
@@ -132,7 +133,7 @@ item discoveries or quest introductions; first unusual seed discovery after one
 day. Every-day simulation remains dominant. Limits are evaluated using persisted
 virtual time under the world lock, independent of API call frequency.
 
-The local-only settings tool validates and persists only supplied overrides:
+The settings tool defaults to local-only and validates and persists only supplied overrides:
 
 ```sh
 export NARRATOR_MANUAL_APPROVAL=true
@@ -215,3 +216,7 @@ Phase 5 exposes proposal inspection/review and known/reserved usage in the priva
 operator desk. Browser login uses an opaque session derived from the same scoped
 operator credential; it does not grant narrator permissions to caretaker keys.
 See OPERATOR.md. No dashboard action starts a paid model call.
+
+Phase 6 supplies controlled remote-owner setup after explicit approval and verified
+TLS. Simulation cron never calls the narrator. Keep narrator generation separately
+scheduled and budgeted; no paid AI call was made as part of deployment preparation.

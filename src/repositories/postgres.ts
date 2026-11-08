@@ -16,7 +16,7 @@ export class PostgresWorldRepository implements WorldRepository {
     let broken=false;
     const onError=()=>{broken=true;};
     db.on("error",onError);
-    try { await db.query('BEGIN'); await db.query("SET LOCAL lock_timeout='10s'");
+    try { await db.query('BEGIN'); await db.query("SET LOCAL lock_timeout='10s'; SET LOCAL statement_timeout='45s'; SET LOCAL idle_in_transaction_session_timeout='20s'");
       const result=await work(db); await db.query('COMMIT'); return result;
     } catch(error){try{await db.query('ROLLBACK');}catch{broken=true;}throw error;} finally{db.release(broken);db.removeListener('error',onError);}
   }
@@ -77,7 +77,11 @@ export class PostgresWorldRepository implements WorldRepository {
       await db.query('INSERT INTO little_worlds.simulation_ticks(world_id,request_id,tick_from,tick_to,virtual_time,real_time) VALUES($1,$2,$3,$4,$5,$6)',[id,requestId,before.tick,after.tick,after.virtualTime,after.lastRealTime]);
       await db.query('UPDATE little_worlds.simulation_state SET virtual_time=$2,last_real_time=$3,tick=$4,random_state=$5,weather=$6 WHERE world_id=$1',[id,after.virtualTime,after.lastRealTime,after.tick,after.randomState,after.weather]);
       for(const c of after.creatures)await db.query('UPDATE little_worlds.creatures SET location_id=$3,owner_id=$4,data=$5 WHERE world_id=$1 AND id=$2',[id,c.id,c.location,c.owner,JSON.stringify(c)]);
-      for(const e of after.journal)await db.query('INSERT INTO little_worlds.event_journal(world_id,id,virtual_time,real_time,source,event_type,actor_id,location_id,payload,effects,correlation_id,tick_request_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$11)',[id,e.id,e.virtualTime,e.realTime,e.source,e.type,e.actor,e.location,JSON.stringify(e.payload),JSON.stringify(e.effects),requestId]);
+      await db.query(`INSERT INTO little_worlds.event_journal(world_id,id,virtual_time,real_time,source,event_type,actor_id,location_id,payload,effects,correlation_id,tick_request_id)
+       SELECT e.world_id,e.id,e.virtual_time,e.real_time,e.source,e.event_type,e.actor_id,e.location_id,e.payload,e.effects,e.correlation_id,e.correlation_id
+       FROM jsonb_to_recordset($1::jsonb) AS e(world_id uuid,id text,virtual_time double precision,real_time double precision,source text,event_type text,actor_id text,location_id text,payload jsonb,effects jsonb,correlation_id text)`,
+       [JSON.stringify(after.journal.map(e=>({world_id:id,id:e.id,virtual_time:e.virtualTime,real_time:e.realTime,source:e.source,event_type:e.type,actor_id:e.actor,location_id:e.location,payload:e.payload,effects:e.effects,correlation_id:requestId})))]);
+
       return {duplicate:false,tick:after.tick,virtualTime:after.virtualTime};
 
   }

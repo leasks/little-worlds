@@ -11,7 +11,8 @@ Private browser operator login and the dashboard are documented in OPERATOR.md.
 ## Prepare the local server and credential
 
 Follow DATABASE.md first, including `npm run db:migrate` to apply migration 0002.
-Only local migrations/provisioning are automated. Set DATABASE_URL privately to
+Provisioning defaults to local databases; reviewed remote owner operations require
+explicit approval and --remote-approved (DEPLOYMENT.md). Set DATABASE_URL privately to
 that local PostgreSQL database; it is never sent to the external client.
 
 ```sh
@@ -152,3 +153,7 @@ See [NARRATOR.md](NARRATOR.md) for separate roles, proposals and the quest seque
 Phase 5 adds a separate cookie-authenticated operator UI/API described in
 [OPERATOR.md](OPERATOR.md). Agent bearer routes do not accept those cookies.
 Archived test worlds remain observable but reject new caretaker/narrator writes.
+
+Phase 6 adds separate secret-authenticated /api/cron/tick and /api/cron/health
+endpoints. Neither caretaker keys nor browser cookies grant scheduler authority.
+See DEPLOYMENT.md for the one-shot client and pinned-world contract.

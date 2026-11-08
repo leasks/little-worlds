@@ -1,17 +1,20 @@
 import { createHash } from 'node:crypto';
 import { readdir,readFile } from 'node:fs/promises';
 import { Pool } from 'pg';
+import { transportConfig } from '../src/server/runtime-pool';
 import { PostgresWorldRepository } from '../src/repositories/postgres';
 async function main(){
 const url=process.env.DATABASE_URL;
 if(!url)throw Error('DATABASE_URL is required (server only)');
-const pool=new Pool({connectionString:url});
+const remote=!['localhost','127.0.0.1','[::1]'].includes(new URL(url).hostname);
+if(remote&&!process.argv.includes('--remote-approved'))throw Error('Remote database changes require explicit approval and --remote-approved');
+const pool=new Pool({...transportConfig(url),max:1,connectionTimeoutMillis:5000});
 try {
  const command=process.argv[2];
  if(command==='migrate'){
   // Explicit opt-in guards against accidentally using remote production settings.
   const host=new URL(url).hostname;
-  if(!['localhost','127.0.0.1','[::1]'].includes(host))throw Error('This runner only migrates local databases. Remote migrations require operator approval and a separate reviewed command.');
+  if(!['localhost','127.0.0.1','[::1]'].includes(host)&&!process.argv.includes('--remote-approved'))throw Error('Remote migrations require explicit approval');
   const db=await pool.connect();
   try {await db.query('BEGIN');await db.query("SELECT pg_advisory_xact_lock(7346281)");
    await db.query('CREATE TABLE IF NOT EXISTS public.little_worlds_migrations(name text PRIMARY KEY,checksum text NOT NULL)');

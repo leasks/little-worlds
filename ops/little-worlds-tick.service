@@ -1,0 +1,17 @@
+[Unit]
+Description=Little Worlds authenticated one-shot tick
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=little-worlds
+WorkingDirectory=/srv/little-worlds
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+EnvironmentFile=/etc/little-worlds/scheduler.env
+ExecStart=/usr/bin/env node --import tsx scripts/tick-worker.ts
+TimeoutStartSec=120
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true

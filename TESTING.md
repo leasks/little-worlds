@@ -72,3 +72,22 @@ exercise real HTTP without Groq. The Phase 5 browser suite also exercises the
 narrator/caretaker APIs to complete the displayed quest. No live model availability
 claim follows from mocked provider tests. The full 30-day caretaker chronicle and
 scheduled deployment tests remain Phases 7 and 6 respectively.
+
+## Phase 6 scheduling and recovery checks
+
+The SQL suite now includes scheduler concurrency, slot/worker retries, bounded
+backlog, paused/test/archive skipping, failure rollback/retry and cadence-aware
+health. Unit tests cover secret/payload boundaries, stable worker retry IDs, TLS
+requirements and unsafe-role rejection. Browser coverage also includes persisted
+scheduler failure visibility. No test calls a live cloud/paid service.
+
+`npm run test:scheduler-http -- prepare` creates a private local fixture context
+in /tmp (mode 0600; refuses to overwrite it). Start the built local server with
+its securely loaded CRON_SECRET/CRON_WORLD_ID, then run `npm run test:scheduler-http`
+with TEST_DATABASE_URL. SCHEDULER_TEST_CONTEXT can select another private context
+file. This is a development helper, not production credential provisioning.
+
+`npm run recovery:check` requires DATABASE_URL, a distinct local RESTORE_DATABASE_URL
+and RECOVERY_WORLD_ID for a paused/archived source with a committed tick. It compares
+all world tables and retries the existing tick on the restore. Pause writers before
+dumping; see DEPLOYMENT.md for checksums, full restore and credential cutover.
