@@ -1,0 +1,182 @@
+{
+  "mode": "LOCAL FIXTURE — no database or AI",
+  "villageDays": 30,
+  "ticks": 2880,
+  "eventCount": 8640,
+  "randomState": 4198233351,
+  "creatures": [
+    {
+      "id": "pip",
+      "world_id": "local-first-village",
+      "name": "Pip",
+      "archetype": "wayfarer",
+      "createdAt": 0,
+      "ageDays": 30,
+      "location": "square",
+      "needs": {
+        "hunger": 60,
+        "energy": 42.5,
+        "happiness": 100,
+        "health": 100
+      },
+      "traits": {
+        "curiosity": 90,
+        "energy": 85,
+        "sociability": 80,
+        "patience": 20.534999999999894,
+        "caution": 20
+      },
+      "preferences": [
+        "explore"
+      ],
+      "dislikes": [
+        "garden"
+      ],
+      "activity": "socialise",
+      "relationships": {
+        "nim": 100,
+        "moss": 100
+      },
+      "memories": [
+        "Day 12: enjoyed explore at forest",
+        "Day 13: enjoyed socialise at square",
+        "Day 14: enjoyed explore at forest",
+        "Day 15: enjoyed explore at forest",
+        "Day 16: enjoyed socialise at square",
+        "Day 17: enjoyed eat at cottage",
+        "Day 18: enjoyed eat at cottage",
+        "Day 19: enjoyed eat at cottage",
+        "Day 20: enjoyed eat at cottage",
+        "Day 21: enjoyed play at square",
+        "Day 22: enjoyed play at square",
+        "Day 23: enjoyed explore at forest",
+        "Day 24: enjoyed socialise at square",
+        "Day 25: enjoyed socialise at square",
+        "Day 26: enjoyed socialise at square",
+        "Day 27: enjoyed explore at forest",
+        "Day 28: enjoyed socialise at square",
+        "Day 29: enjoyed socialise at square",
+        "Day 30: enjoyed play at square",
+        "Day 31: enjoyed socialise at square"
+      ],
+      "inventory": {},
+      "owner": "local-caretaker",
+      "lastSimulated": 2592000000
+    },
+    {
+      "id": "moss",
+      "world_id": "local-first-village",
+      "name": "Moss",
+      "archetype": "gardener",
+      "createdAt": 0,
+      "ageDays": 30,
+      "location": "cottage",
+      "needs": {
+        "hunger": 60,
+        "energy": 62.5,
+        "happiness": 99,
+        "health": 100
+      },
+      "traits": {
+        "curiosity": 35,
+        "energy": 45,
+        "sociability": 50,
+        "patience": 94.11999999999625,
+        "caution": 85
+      },
+      "preferences": [
+        "garden"
+      ],
+      "dislikes": [
+        "explore"
+      ],
+      "activity": "rest",
+      "relationships": {
+        "pip": 100
+      },
+      "memories": [
+        "Day 12: enjoyed rest at cottage",
+        "Day 13: enjoyed socialise at square",
+        "Day 14: enjoyed rest at cottage",
+        "Day 15: enjoyed garden at garden",
+        "Day 16: enjoyed garden at garden",
+        "Day 17: enjoyed eat at cottage",
+        "Day 18: enjoyed eat at cottage",
+        "Day 19: enjoyed eat at cottage",
+        "Day 20: enjoyed eat at cottage",
+        "Day 21: enjoyed rest at cottage",
+        "Day 22: enjoyed socialise at square",
+        "Day 23: enjoyed rest at cottage",
+        "Day 24: enjoyed garden at garden",
+        "Day 25: enjoyed rest at cottage",
+        "Day 26: enjoyed garden at garden",
+        "Day 27: enjoyed garden at garden",
+        "Day 28: enjoyed rest at cottage",
+        "Day 29: enjoyed garden at garden",
+        "Day 30: enjoyed rest at cottage",
+        "Day 31: enjoyed rest at cottage"
+      ],
+      "inventory": {},
+      "owner": "local-caretaker",
+      "lastSimulated": 2592000000
+    },
+    {
+      "id": "nim",
+      "world_id": "local-first-village",
+      "name": "Nim",
+      "archetype": "nightwatcher",
+      "createdAt": 0,
+      "ageDays": 30,
+      "location": "square",
+      "needs": {
+        "hunger": 60,
+        "energy": 30,
+        "happiness": 100,
+        "health": 100
+      },
+      "traits": {
+        "curiosity": 75,
+        "energy": 50,
+        "sociability": 25,
+        "patience": 75.95499999999913,
+        "caution": 60
+      },
+      "preferences": [
+        "explore"
+      ],
+      "dislikes": [
+        "garden"
+      ],
+      "activity": "socialise",
+      "relationships": {
+        "pip": 100
+      },
+      "memories": [
+        "Day 12: enjoyed socialise at square",
+        "Day 13: enjoyed play at square",
+        "Day 14: enjoyed socialise at square",
+        "Day 15: enjoyed explore at pond",
+        "Day 16: enjoyed explore at pond",
+        "Day 17: enjoyed eat at cottage",
+        "Day 18: enjoyed eat at cottage",
+        "Day 19: enjoyed eat at cottage",
+        "Day 20: enjoyed eat at cottage",
+        "Day 21: enjoyed explore at pond",
+        "Day 22: enjoyed explore at pond",
+        "Day 23: enjoyed socialise at square",
+        "Day 24: enjoyed explore at pond",
+        "Day 25: enjoyed socialise at square",
+        "Day 26: enjoyed socialise at square",
+        "Day 27: enjoyed socialise at square",
+        "Day 28: enjoyed socialise at square",
+        "Day 29: enjoyed garden at garden",
+        "Day 30: enjoyed explore at pond",
+        "Day 31: enjoyed socialise at square"
+      ],
+      "inventory": {},
+      "owner": "local-caretaker",
+      "lastSimulated": 2592000000
+    }
+  ],
+  "aiRequests": 0
+}

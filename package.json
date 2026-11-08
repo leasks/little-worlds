@@ -1,0 +1,43 @@
+{
+  "name": "little-worlds",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "simulate": "tsx scripts/simulate.ts",
+    "db:migrate": "tsx scripts/database.ts migrate",
+    "db:seed": "tsx scripts/database.ts seed",
+    "test:db": "tsx scripts/test-database.ts",
+    "caretaker:credential": "tsx scripts/caretaker-credential.ts",
+    "caretaker:example": "tsx examples/caretaker.ts",
+    "test:http": "tsx scripts/smoke-caretaker.ts",
+    "narrate": "tsx scripts/narrate.ts",
+    "narrator:settings": "tsx scripts/narrative-settings.ts",
+    "test:narrative-http": "tsx scripts/smoke-narrative.ts",
+    "test:browser": "tsx scripts/test-browser.ts",
+    "db:test-world": "tsx scripts/test-world.ts"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "pg": "^8.23.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}

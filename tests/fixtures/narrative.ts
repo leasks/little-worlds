@@ -1,0 +1,2 @@
+import type { Proposal } from '../../src/narrative/engine';
+export const seedProposal:Proposal={schema_version:1,event_type:'discovery',title:'The Glowing Seed',description:'Pip finds a small softly glowing seed beside Moss.',location_id:'garden',participants:['pip','moss'],effects:[{type:'give_item',target_id:'pip',item_id:'glowing_seed',quantity:1},{type:'adjust_relationship',source_id:'pip',target_id:'moss',delta:2},{type:'unlock_quest',quest_id:'mystery_of_the_seed'}]};
