@@ -91,3 +91,12 @@ file. This is a development helper, not production credential provisioning.
 and RECOVERY_WORLD_ID for a paused/archived source with a committed tick. It compares
 all world tables and retries the existing tick on the restore. Pause writers before
 dumping; see DEPLOYMENT.md for checksums, full restore and credential cutover.
+
+Phase 7 adds persistent full-horizon experiments to the SQL suite. Two 30-day worlds
+must match complete semantic reports, including actions/events/quest progress and
+mock usage. Disabled-mode, unrelated-world rejection, terminal record protection,
+injected failure and report re-export are covered. Unit tests verify local-only
+configuration, complete-horizon evidence, changed/untraced effects, safe Markdown
+and explicit mock pricing. Full raw experiment artifacts are excluded from Git.
+Run `npm run experiment -- --verify` with EXPERIMENT_DATABASE_URL for inspectable
+artifacts; see EXPERIMENT.md. The Phase 7 implementation adds no browser/UI flow.

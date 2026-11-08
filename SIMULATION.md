@@ -27,3 +27,9 @@ lock as ticks. No LLM is called by the simulation loop. AI outages/budget failur
 are independent worker outcomes and leave clock/creature behavior operational.
 Quest stage changes come from ordered predefined objectives, with rewards recorded
 in the same action transaction. NARRATOR.md describes the registered seed quest.
+
+Phase 7's persistent experiment is distinct from the original Phase 1 fixture.
+It preserves the multiplier/interval, supplies explicit logical test tick times,
+and exercises caretaker/narrator/quest transactions with retained inputs and daily
+checkpoints. Two fresh full runs must match semantic state/history fingerprints.
+See EXPERIMENT.md; no live world can be selected as an experiment target.

@@ -12,3 +12,5 @@ playwright-report/
 .pgpass
 *.pgpass
 backups/
+
+.local/

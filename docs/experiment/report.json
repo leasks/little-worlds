@@ -1,0 +1,1901 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "sourceHash": "e799cc4d1a4d2454702d6a677f19b3a13cc0604a97c6eeac9c1ba890c078dc9b",
+  "config": {
+    "schemaVersion": 1,
+    "policy": "caretaker-v1",
+    "seed": 42,
+    "days": 30,
+    "narrator": "mocked",
+    "usdPerMillionMockTokens": null
+  },
+  "semanticHash": "a51d46c8bb31dfe1158aeefbb8e14d8ac4d0336cc31e4d02e784aff6aedff430",
+  "mode": "Local persistent test world; deterministic caretaker; scripted mock narrator or disabled; no live LLM",
+  "validation": {
+    "passed": true,
+    "horizonComplete": true,
+    "checkpointsOrdered": true,
+    "expectedTicks": 2880,
+    "actualTicks": 2880,
+    "expectedSimulationEvents": 8640,
+    "actualSimulationEvents": 8640,
+    "finalMatchesCheckpoint": true,
+    "clockSettingsUnchanged": true,
+    "caretakerEventsMatchActions": true,
+    "narratorEventsMatchAcceptedProposals": true,
+    "uniqueEventIds": true,
+    "allInputsCompleted": true,
+    "questCompletedWhenRequired": true,
+    "oneQuestReward": true
+  },
+  "villageDaysElapsed": 30,
+  "eventFrequency": {
+    "total": 8995,
+    "bySource": {
+      "caretaker": 353,
+      "simulation": 8640,
+      "narrator": 2
+    },
+    "byType": {
+      "interact_creature": 90,
+      "activity": 8640,
+      "feed_creature": 18,
+      "visit_location": 90,
+      "encourage_rest": 131,
+      "encourage_play": 10,
+      "discovery": 1,
+      "explore": 7,
+      "investigate_discovery": 1,
+      "plant_crop": 3,
+      "tend_crop": 3,
+      "social_interaction": 1
+    },
+    "narratorEventsPerVillageDay": 0.0667
+  },
+  "caretaker": {
+    "acceptedActions": 353,
+    "replayedActions": 1,
+    "policySkips": {
+      "Already together at the location": 32,
+      "No feeding needed": 3,
+      "No caretaker berries available": 69,
+      "No caretaker seeds available": 2
+    },
+    "finalResources": {
+      "location": "cottage",
+      "inventory": {
+        "berries": 0,
+        "seeds": 0
+      },
+      "crops": 0
+    }
+  },
+  "replayedTicks": 1,
+  "creatures": [
+    {
+      "id": "pip",
+      "name": "Pip",
+      "activities": {
+        "explore": 628,
+        "socialise": 1019,
+        "play": 368,
+        "rest": 356,
+        "eat": 406,
+        "garden": 103
+      },
+      "recordedNeedsRange": {
+        "hunger": {
+          "min": 20,
+          "max": 65
+        },
+        "energy": {
+          "min": 28.25,
+          "max": 100
+        },
+        "happiness": {
+          "min": 75,
+          "max": 100
+        },
+        "health": {
+          "min": 100,
+          "max": 100
+        }
+      },
+      "finalNeeds": {
+        "hunger": 57.5,
+        "energy": 68.5,
+        "happiness": 99.5,
+        "health": 100
+      },
+      "personality": {
+        "curiosity": {
+          "before": 90,
+          "after": 90,
+          "delta": 0
+        },
+        "energy": {
+          "before": 85,
+          "after": 85,
+          "delta": 0
+        },
+        "sociability": {
+          "before": 80,
+          "after": 80,
+          "delta": 0
+        },
+        "patience": {
+          "before": 20,
+          "after": 20.515,
+          "delta": 0.515
+        },
+        "caution": {
+          "before": 20,
+          "after": 20,
+          "delta": 0
+        }
+      },
+      "relationships": {
+        "before": {},
+        "after": {
+          "nim": 100,
+          "moss": 100
+        },
+        "changes": {
+          "nim": 100,
+          "moss": 100
+        }
+      },
+      "memories": {
+        "retained": [
+          "Day 21: A Familiar Bench",
+          "Day 22: enjoyed play at square",
+          "Day 22: a kind visit from local-caretaker",
+          "Day 23: enjoyed rest at cottage",
+          "Day 23: a kind visit from local-caretaker",
+          "Day 24: enjoyed rest at cottage",
+          "Day 24: a kind visit from local-caretaker",
+          "Day 25: enjoyed explore at forest",
+          "Day 25: a kind visit from local-caretaker",
+          "Day 26: enjoyed explore at forest",
+          "Day 26: a kind visit from local-caretaker",
+          "Day 27: enjoyed explore at forest",
+          "Day 27: a kind visit from local-caretaker",
+          "Day 28: enjoyed explore at forest",
+          "Day 28: a kind visit from local-caretaker",
+          "Day 29: enjoyed socialise at square",
+          "Day 29: a kind visit from local-caretaker",
+          "Day 30: enjoyed socialise at square",
+          "Day 30: a kind visit from local-caretaker",
+          "Day 31: enjoyed rest at cottage"
+        ],
+        "observedCount": 64,
+        "observed": [
+          "Day 1: a kind visit from local-caretaker",
+          "Day 2: enjoyed rest at cottage",
+          "Day 2: a kind visit from local-caretaker",
+          "Day 3: enjoyed play at square",
+          "Day 3: a kind visit from local-caretaker",
+          "Day 3: The Glowing Seed",
+          "Day 4: enjoyed socialise at square",
+          "Day 4: a kind visit from local-caretaker",
+          "The Glowing Seed pulses gently in the garden.",
+          "Day 5: enjoyed socialise at square",
+          "Day 5: a kind visit from local-caretaker",
+          "The Glowing Seed bloomed into a gentle garden light.",
+          "Day 6: enjoyed socialise at square",
+          "Day 6: a kind visit from local-caretaker",
+          "Day 7: enjoyed rest at cottage",
+          "Day 7: a kind visit from local-caretaker",
+          "Day 8: enjoyed socialise at square",
+          "Day 8: a kind visit from local-caretaker",
+          "Day 9: enjoyed socialise at square",
+          "Day 9: a kind visit from local-caretaker",
+          "Day 10: enjoyed play at square",
+          "Day 10: a kind visit from local-caretaker",
+          "Day 11: enjoyed socialise at square",
+          "Day 11: a kind visit from local-caretaker",
+          "Day 12: enjoyed garden at garden",
+          "Day 12: a kind visit from local-caretaker",
+          "Day 13: enjoyed play at square",
+          "Day 13: a kind visit from local-caretaker",
+          "Day 14: enjoyed explore at forest",
+          "Day 14: a kind visit from local-caretaker",
+          "Day 15: enjoyed rest at cottage",
+          "Day 15: a kind visit from local-caretaker",
+          "Day 16: enjoyed socialise at square",
+          "Day 16: a kind visit from local-caretaker",
+          "Day 17: enjoyed rest at cottage",
+          "Day 17: a kind visit from local-caretaker",
+          "Day 18: enjoyed socialise at square",
+          "Day 18: a kind visit from local-caretaker",
+          "Day 19: enjoyed socialise at square",
+          "Day 19: a kind visit from local-caretaker",
+          "Day 20: enjoyed rest at cottage",
+          "Day 20: a kind visit from local-caretaker",
+          "Day 21: enjoyed rest at cottage",
+          "Day 21: a kind visit from local-caretaker",
+          "Day 21: A Familiar Bench",
+          "Day 22: enjoyed play at square",
+          "Day 22: a kind visit from local-caretaker",
+          "Day 23: enjoyed rest at cottage",
+          "Day 23: a kind visit from local-caretaker",
+          "Day 24: enjoyed rest at cottage",
+          "Day 24: a kind visit from local-caretaker",
+          "Day 25: enjoyed explore at forest",
+          "Day 25: a kind visit from local-caretaker",
+          "Day 26: enjoyed explore at forest",
+          "Day 26: a kind visit from local-caretaker",
+          "Day 27: enjoyed explore at forest",
+          "Day 27: a kind visit from local-caretaker",
+          "Day 28: enjoyed explore at forest",
+          "Day 28: a kind visit from local-caretaker",
+          "Day 29: enjoyed socialise at square",
+          "Day 29: a kind visit from local-caretaker",
+          "Day 30: enjoyed socialise at square",
+          "Day 30: a kind visit from local-caretaker",
+          "Day 31: enjoyed rest at cottage"
+        ]
+      },
+      "inventory": {
+        "seed_charm": 1,
+        "glowing_seed": 0
+      },
+      "exploration": {
+        "nightSteps": 1200,
+        "daySteps": 1680,
+        "nightExplorations": 240,
+        "dayExplorations": 388
+      }
+    },
+    {
+      "id": "moss",
+      "name": "Moss",
+      "activities": {
+        "rest": 374,
+        "play": 276,
+        "explore": 100,
+        "socialise": 920,
+        "garden": 801,
+        "eat": 409
+      },
+      "recordedNeedsRange": {
+        "hunger": {
+          "min": 20,
+          "max": 65
+        },
+        "energy": {
+          "min": 25.75,
+          "max": 100
+        },
+        "happiness": {
+          "min": 75,
+          "max": 100
+        },
+        "health": {
+          "min": 100,
+          "max": 100
+        }
+      },
+      "finalNeeds": {
+        "hunger": 56.25,
+        "energy": 76.25,
+        "happiness": 100,
+        "health": 100
+      },
+      "personality": {
+        "curiosity": {
+          "before": 35,
+          "after": 35,
+          "delta": 0
+        },
+        "energy": {
+          "before": 45,
+          "after": 45,
+          "delta": 0
+        },
+        "sociability": {
+          "before": 50,
+          "after": 50,
+          "delta": 0
+        },
+        "patience": {
+          "before": 90,
+          "after": 94.005,
+          "delta": 4.005
+        },
+        "caution": {
+          "before": 85,
+          "after": 85,
+          "delta": 0
+        }
+      },
+      "relationships": {
+        "before": {},
+        "after": {
+          "pip": 100
+        },
+        "changes": {
+          "pip": 100
+        }
+      },
+      "memories": {
+        "retained": [
+          "Day 21: A Familiar Bench",
+          "Day 22: enjoyed explore at pond",
+          "Day 22: a kind visit from local-caretaker",
+          "Day 23: enjoyed play at square",
+          "Day 23: a kind visit from local-caretaker",
+          "Day 24: enjoyed garden at garden",
+          "Day 24: a kind visit from local-caretaker",
+          "Day 25: enjoyed rest at cottage",
+          "Day 25: a kind visit from local-caretaker",
+          "Day 26: enjoyed garden at garden",
+          "Day 26: a kind visit from local-caretaker",
+          "Day 27: enjoyed rest at cottage",
+          "Day 27: a kind visit from local-caretaker",
+          "Day 28: enjoyed rest at cottage",
+          "Day 28: a kind visit from local-caretaker",
+          "Day 29: enjoyed socialise at square",
+          "Day 29: a kind visit from local-caretaker",
+          "Day 30: enjoyed rest at cottage",
+          "Day 30: a kind visit from local-caretaker",
+          "Day 31: enjoyed socialise at square"
+        ],
+        "observedCount": 62,
+        "observed": [
+          "Day 1: a kind visit from local-caretaker",
+          "Day 2: enjoyed garden at garden",
+          "Day 2: a kind visit from local-caretaker",
+          "Day 3: enjoyed socialise at square",
+          "Day 3: a kind visit from local-caretaker",
+          "Day 3: The Glowing Seed",
+          "Day 4: enjoyed rest at cottage",
+          "Day 4: a kind visit from local-caretaker",
+          "Day 5: enjoyed rest at cottage",
+          "Day 5: a kind visit from local-caretaker",
+          "Day 6: enjoyed rest at cottage",
+          "Day 6: a kind visit from local-caretaker",
+          "Day 7: enjoyed socialise at square",
+          "Day 7: a kind visit from local-caretaker",
+          "Day 8: enjoyed rest at cottage",
+          "Day 8: a kind visit from local-caretaker",
+          "Day 9: enjoyed garden at garden",
+          "Day 9: a kind visit from local-caretaker",
+          "Day 10: enjoyed eat at cottage",
+          "Day 10: a kind visit from local-caretaker",
+          "Day 11: enjoyed eat at cottage",
+          "Day 11: a kind visit from local-caretaker",
+          "Day 12: enjoyed eat at cottage",
+          "Day 12: a kind visit from local-caretaker",
+          "Day 13: enjoyed eat at cottage",
+          "Day 13: a kind visit from local-caretaker",
+          "Day 14: enjoyed socialise at square",
+          "Day 14: a kind visit from local-caretaker",
+          "Day 15: enjoyed rest at cottage",
+          "Day 15: a kind visit from local-caretaker",
+          "Day 16: enjoyed garden at garden",
+          "Day 16: a kind visit from local-caretaker",
+          "Day 17: enjoyed garden at garden",
+          "Day 17: a kind visit from local-caretaker",
+          "Day 18: enjoyed socialise at square",
+          "Day 18: a kind visit from local-caretaker",
+          "Day 19: enjoyed rest at cottage",
+          "Day 19: a kind visit from local-caretaker",
+          "Day 20: enjoyed rest at cottage",
+          "Day 20: a kind visit from local-caretaker",
+          "Day 21: enjoyed garden at garden",
+          "Day 21: a kind visit from local-caretaker",
+          "Day 21: A Familiar Bench",
+          "Day 22: enjoyed explore at pond",
+          "Day 22: a kind visit from local-caretaker",
+          "Day 23: enjoyed play at square",
+          "Day 23: a kind visit from local-caretaker",
+          "Day 24: enjoyed garden at garden",
+          "Day 24: a kind visit from local-caretaker",
+          "Day 25: enjoyed rest at cottage",
+          "Day 25: a kind visit from local-caretaker",
+          "Day 26: enjoyed garden at garden",
+          "Day 26: a kind visit from local-caretaker",
+          "Day 27: enjoyed rest at cottage",
+          "Day 27: a kind visit from local-caretaker",
+          "Day 28: enjoyed rest at cottage",
+          "Day 28: a kind visit from local-caretaker",
+          "Day 29: enjoyed socialise at square",
+          "Day 29: a kind visit from local-caretaker",
+          "Day 30: enjoyed rest at cottage",
+          "Day 30: a kind visit from local-caretaker",
+          "Day 31: enjoyed socialise at square"
+        ]
+      },
+      "inventory": {},
+      "exploration": {
+        "nightSteps": 1200,
+        "daySteps": 1680,
+        "nightExplorations": 39,
+        "dayExplorations": 61
+      }
+    },
+    {
+      "id": "nim",
+      "name": "Nim",
+      "activities": {
+        "socialise": 799,
+        "garden": 194,
+        "explore": 762,
+        "play": 457,
+        "eat": 407,
+        "rest": 261
+      },
+      "recordedNeedsRange": {
+        "hunger": {
+          "min": 20,
+          "max": 65
+        },
+        "energy": {
+          "min": 28.75,
+          "max": 97.5
+        },
+        "happiness": {
+          "min": 75,
+          "max": 100
+        },
+        "health": {
+          "min": 100,
+          "max": 100
+        }
+      },
+      "finalNeeds": {
+        "hunger": 63.75,
+        "energy": 37,
+        "happiness": 100,
+        "health": 100
+      },
+      "personality": {
+        "curiosity": {
+          "before": 75,
+          "after": 75,
+          "delta": 0
+        },
+        "energy": {
+          "before": 50,
+          "after": 50,
+          "delta": 0
+        },
+        "sociability": {
+          "before": 25,
+          "after": 25,
+          "delta": 0
+        },
+        "patience": {
+          "before": 75,
+          "after": 75.97,
+          "delta": 0.97
+        },
+        "caution": {
+          "before": 60,
+          "after": 60,
+          "delta": 0
+        }
+      },
+      "relationships": {
+        "before": {},
+        "after": {
+          "pip": 100
+        },
+        "changes": {
+          "pip": 100
+        }
+      },
+      "memories": {
+        "retained": [
+          "Day 21: a kind visit from local-caretaker",
+          "Day 22: enjoyed play at square",
+          "Day 22: a kind visit from local-caretaker",
+          "Day 23: enjoyed play at square",
+          "Day 23: a kind visit from local-caretaker",
+          "Day 24: enjoyed explore at pond",
+          "Day 24: a kind visit from local-caretaker",
+          "Day 25: enjoyed eat at cottage",
+          "Day 25: a kind visit from local-caretaker",
+          "Day 26: enjoyed eat at cottage",
+          "Day 26: a kind visit from local-caretaker",
+          "Day 27: enjoyed eat at cottage",
+          "Day 27: a kind visit from local-caretaker",
+          "Day 28: enjoyed eat at cottage",
+          "Day 28: a kind visit from local-caretaker",
+          "Day 29: enjoyed explore at pond",
+          "Day 29: a kind visit from local-caretaker",
+          "Day 30: enjoyed explore at pond",
+          "Day 30: a kind visit from local-caretaker",
+          "Day 31: enjoyed play at square"
+        ],
+        "observedCount": 60,
+        "observed": [
+          "Day 1: a kind visit from local-caretaker",
+          "Day 2: enjoyed socialise at square",
+          "Day 2: a kind visit from local-caretaker",
+          "Day 3: enjoyed explore at pond",
+          "Day 3: a kind visit from local-caretaker",
+          "Day 4: enjoyed explore at pond",
+          "Day 4: a kind visit from local-caretaker",
+          "Day 5: enjoyed play at square",
+          "Day 5: a kind visit from local-caretaker",
+          "Day 6: enjoyed explore at pond",
+          "Day 6: a kind visit from local-caretaker",
+          "Day 7: enjoyed explore at pond",
+          "Day 7: a kind visit from local-caretaker",
+          "Day 8: enjoyed rest at cottage",
+          "Day 8: a kind visit from local-caretaker",
+          "Day 9: enjoyed socialise at square",
+          "Day 9: a kind visit from local-caretaker",
+          "Day 10: enjoyed eat at cottage",
+          "Day 10: a kind visit from local-caretaker",
+          "Day 11: enjoyed eat at cottage",
+          "Day 11: a kind visit from local-caretaker",
+          "Day 12: enjoyed eat at cottage",
+          "Day 12: a kind visit from local-caretaker",
+          "Day 13: enjoyed eat at cottage",
+          "Day 13: a kind visit from local-caretaker",
+          "Day 14: enjoyed garden at garden",
+          "Day 14: a kind visit from local-caretaker",
+          "Day 15: enjoyed explore at pond",
+          "Day 15: a kind visit from local-caretaker",
+          "Day 16: enjoyed rest at cottage",
+          "Day 16: a kind visit from local-caretaker",
+          "Day 17: enjoyed garden at garden",
+          "Day 17: a kind visit from local-caretaker",
+          "Day 18: enjoyed socialise at square",
+          "Day 18: a kind visit from local-caretaker",
+          "Day 19: enjoyed play at square",
+          "Day 19: a kind visit from local-caretaker",
+          "Day 20: enjoyed explore at pond",
+          "Day 20: a kind visit from local-caretaker",
+          "Day 21: enjoyed play at square",
+          "Day 21: a kind visit from local-caretaker",
+          "Day 22: enjoyed play at square",
+          "Day 22: a kind visit from local-caretaker",
+          "Day 23: enjoyed play at square",
+          "Day 23: a kind visit from local-caretaker",
+          "Day 24: enjoyed explore at pond",
+          "Day 24: a kind visit from local-caretaker",
+          "Day 25: enjoyed eat at cottage",
+          "Day 25: a kind visit from local-caretaker",
+          "Day 26: enjoyed eat at cottage",
+          "Day 26: a kind visit from local-caretaker",
+          "Day 27: enjoyed eat at cottage",
+          "Day 27: a kind visit from local-caretaker",
+          "Day 28: enjoyed eat at cottage",
+          "Day 28: a kind visit from local-caretaker",
+          "Day 29: enjoyed explore at pond",
+          "Day 29: a kind visit from local-caretaker",
+          "Day 30: enjoyed explore at pond",
+          "Day 30: a kind visit from local-caretaker",
+          "Day 31: enjoyed play at square"
+        ]
+      },
+      "inventory": {},
+      "exploration": {
+        "nightSteps": 1200,
+        "daySteps": 1680,
+        "nightExplorations": 404,
+        "dayExplorations": 358
+      }
+    }
+  ],
+  "quest": {
+    "id": "mystery_of_the_seed",
+    "owner": "pip",
+    "stage": 4,
+    "status": "completed",
+    "clues": [
+      "The seed gives a gentle pulse when examined.",
+      "Its glow reflects softly in the pond.",
+      "A sheltered patch of garden feels right.",
+      "A small luminous flower leaves a seed-shaped charm."
+    ]
+  },
+  "questCompletedDay": 5,
+  "proposals": {
+    "accepted": 2,
+    "rejected": 3,
+    "rejectionCodes": {
+      "INVALID_PROPOSAL": 2,
+      "DUPLICATE_PROPOSAL": 1
+    },
+    "records": [
+      {
+        "actor_id": "local-narrator",
+        "request_id": "ai:exp-d21-social",
+        "input": {
+          "title": "A Familiar Bench",
+          "effects": [
+            {
+              "type": "adjust_relationship",
+              "delta": 0,
+              "source_id": "pip",
+              "target_id": "moss"
+            }
+          ],
+          "event_type": "social_interaction",
+          "description": "Pip and Moss share a quiet moment on their familiar bench in the square.",
+          "location_id": "square",
+          "participants": [
+            "pip",
+            "moss"
+          ],
+          "schema_version": 1
+        },
+        "status": "accepted",
+        "code": null,
+        "applied_virtual_time": 1728000000
+      },
+      {
+        "actor_id": "local-narrator",
+        "request_id": "ai:exp-d3-seed",
+        "input": {
+          "title": "The Glowing Seed",
+          "effects": [
+            {
+              "type": "give_item",
+              "item_id": "glowing_seed",
+              "quantity": 1,
+              "target_id": "pip"
+            },
+            {
+              "type": "adjust_relationship",
+              "delta": 2,
+              "source_id": "pip",
+              "target_id": "moss"
+            },
+            {
+              "type": "unlock_quest",
+              "quest_id": "mystery_of_the_seed"
+            }
+          ],
+          "event_type": "discovery",
+          "description": "Beside Moss in the garden, Pip notices a seed with a quiet green glow.",
+          "location_id": "garden",
+          "participants": [
+            "pip",
+            "moss"
+          ],
+          "schema_version": 1
+        },
+        "status": "accepted",
+        "code": null,
+        "applied_virtual_time": 172800000
+      },
+      {
+        "actor_id": "local-narrator",
+        "request_id": "ai:exp-d9-malformed",
+        "input": {
+          "effects": [
+            {
+              "sql": "not executable",
+              "type": "execute_sql"
+            }
+          ],
+          "schema_version": 1
+        },
+        "status": "rejected",
+        "code": "INVALID_PROPOSAL",
+        "applied_virtual_time": null
+      },
+      {
+        "actor_id": "local-narrator",
+        "request_id": "exp-duplicate-seed",
+        "input": {
+          "title": "The Glowing Seed",
+          "effects": [
+            {
+              "type": "give_item",
+              "item_id": "glowing_seed",
+              "quantity": 1,
+              "target_id": "pip"
+            },
+            {
+              "type": "adjust_relationship",
+              "delta": 2,
+              "source_id": "pip",
+              "target_id": "moss"
+            },
+            {
+              "type": "unlock_quest",
+              "quest_id": "mystery_of_the_seed"
+            }
+          ],
+          "event_type": "discovery",
+          "description": "Beside Moss in the garden, Pip notices a seed with a quiet green glow.",
+          "location_id": "garden",
+          "participants": [
+            "pip",
+            "moss"
+          ],
+          "schema_version": 1
+        },
+        "status": "rejected",
+        "code": "DUPLICATE_PROPOSAL",
+        "applied_virtual_time": null
+      },
+      {
+        "actor_id": "local-narrator",
+        "request_id": "exp-unknown-item",
+        "input": {
+          "title": "The Glowing Seed",
+          "effects": [
+            {
+              "type": "give_item",
+              "item_id": "unregistered_artifact",
+              "quantity": 1,
+              "target_id": "pip"
+            }
+          ],
+          "event_type": "discovery",
+          "description": "Beside Moss in the garden, Pip notices a seed with a quiet green glow.",
+          "location_id": "garden",
+          "participants": [
+            "pip",
+            "moss"
+          ],
+          "schema_version": 1
+        },
+        "status": "rejected",
+        "code": "INVALID_PROPOSAL",
+        "applied_virtual_time": null
+      }
+    ]
+  },
+  "failures": {
+    "simulation": 0,
+    "mockProviderErrors": 2,
+    "incompleteInputs": 0,
+    "fatalCode": null
+  },
+  "ai": {
+    "liveRequests": 0,
+    "liveModelTokens": 0,
+    "mockAttempts": 5,
+    "mockReportedTokens": 288,
+    "mockReservedUnits": 2560,
+    "unknownMockUsageAttempts": 2,
+    "usage": [
+      {
+        "workflow_id": "exp-d15-outage",
+        "attempt": 0,
+        "model": "scripted-mock-v1",
+        "status": "error",
+        "reserved_tokens": 512,
+        "actual_tokens": null,
+        "error_code": "NETWORK_OR_TIMEOUT"
+      },
+      {
+        "workflow_id": "exp-d15-outage",
+        "attempt": 1,
+        "model": "scripted-mock-v1",
+        "status": "error",
+        "reserved_tokens": 512,
+        "actual_tokens": null,
+        "error_code": "NETWORK_OR_TIMEOUT"
+      },
+      {
+        "workflow_id": "exp-d21-social",
+        "attempt": 0,
+        "model": "scripted-mock-v1",
+        "status": "ok",
+        "reserved_tokens": 512,
+        "actual_tokens": 96,
+        "error_code": null
+      },
+      {
+        "workflow_id": "exp-d3-seed",
+        "attempt": 0,
+        "model": "scripted-mock-v1",
+        "status": "ok",
+        "reserved_tokens": 512,
+        "actual_tokens": 96,
+        "error_code": null
+      },
+      {
+        "workflow_id": "exp-d9-malformed",
+        "attempt": 0,
+        "model": "scripted-mock-v1",
+        "status": "ok",
+        "reserved_tokens": 512,
+        "actual_tokens": 96,
+        "error_code": null
+      }
+    ]
+  },
+  "costs": {
+    "liveApiSpendUsd": 0,
+    "hostingCostUsd": null,
+    "uniformMockUsdPerMillionTokens": null,
+    "hypotheticalKnownMockCostUsd": null,
+    "hypotheticalReservedMockCostUsd": null
+  },
+  "observations": [
+    "Pip's most frequent autonomous activity was socialise (1019 steps).",
+    "Pip's patience grew by 0.515 through recorded gardening practice.",
+    "Moss's most frequent autonomous activity was socialise (920 steps).",
+    "Moss's patience grew by 4.005 through recorded gardening practice.",
+    "Nim's most frequent autonomous activity was socialise (799 steps).",
+    "Nim's patience grew by 0.97 through recorded gardening practice.",
+    "Nim explored on 33.6667% of night steps and 21.3095% of day steps."
+  ],
+  "daily": [
+    {
+      "day": 1,
+      "virtualTime": 86400000,
+      "tick": 96,
+      "weatherAtCheckpoint": "rain",
+      "events": {
+        "caretaker": 3,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 40,
+        "rest": 40,
+        "socialise": 80,
+        "play": 50,
+        "garden": 45,
+        "eat": 33
+      },
+      "quest": null,
+      "caretakerInventory": {
+        "seeds": 3,
+        "berries": 12
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 2,
+      "virtualTime": 172800000,
+      "tick": 192,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 11,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 77,
+        "rest": 35,
+        "socialise": 72,
+        "garden": 38,
+        "play": 27,
+        "eat": 39
+      },
+      "quest": null,
+      "caretakerInventory": {
+        "seeds": 3,
+        "berries": 9
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 3,
+      "virtualTime": 259200000,
+      "tick": 288,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 21,
+        "narrator": 1,
+        "simulation": 288
+      },
+      "activities": {
+        "rest": 36,
+        "garden": 45,
+        "play": 37,
+        "explore": 70,
+        "socialise": 64,
+        "eat": 36
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [],
+        "owner": "pip",
+        "stage": 0,
+        "status": "active"
+      },
+      "caretakerInventory": {
+        "seeds": 3,
+        "berries": 6
+      },
+      "mockProviderAttempts": 1,
+      "highlights": [
+        "The Glowing Seed"
+      ]
+    },
+    {
+      "day": 4,
+      "virtualTime": 345600000,
+      "tick": 384,
+      "weatherAtCheckpoint": "rain",
+      "events": {
+        "caretaker": 16,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 41,
+        "rest": 36,
+        "play": 39,
+        "socialise": 96,
+        "garden": 37,
+        "eat": 39
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond."
+        ],
+        "owner": "pip",
+        "stage": 2,
+        "status": "active"
+      },
+      "caretakerInventory": {
+        "seeds": 3,
+        "berries": 3
+      },
+      "mockProviderAttempts": 0,
+      "highlights": [
+        "Quest clue 1: The seed gives a gentle pulse when examined.",
+        "Quest clue 2: Its glow reflects softly in the pond."
+      ]
+    },
+    {
+      "day": 5,
+      "virtualTime": 432000000,
+      "tick": 480,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 15,
+        "simulation": 288
+      },
+      "activities": {
+        "rest": 29,
+        "socialise": 84,
+        "explore": 49,
+        "garden": 40,
+        "play": 50,
+        "eat": 36
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 2,
+        "berries": 2
+      },
+      "mockProviderAttempts": 0,
+      "highlights": [
+        "Quest clue 3: A sheltered patch of garden feels right.",
+        "Quest clue 4: A small luminous flower leaves a seed-shaped charm."
+      ]
+    },
+    {
+      "day": 6,
+      "virtualTime": 518400000,
+      "tick": 576,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 18,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 55,
+        "socialise": 92,
+        "eat": 40,
+        "garden": 36,
+        "rest": 29,
+        "play": 36
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 2,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 7,
+      "virtualTime": 604800000,
+      "tick": 672,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 14,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 56,
+        "play": 33,
+        "socialise": 98,
+        "rest": 31,
+        "garden": 29,
+        "eat": 41
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 1,
+        "berries": 1
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 8,
+      "virtualTime": 691200000,
+      "tick": 768,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 13,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 49,
+        "play": 26,
+        "socialise": 106,
+        "garden": 38,
+        "rest": 29,
+        "eat": 40
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 1,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 9,
+      "virtualTime": 777600000,
+      "tick": 864,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 14,
+        "simulation": 288
+      },
+      "activities": {
+        "rest": 34,
+        "socialise": 85,
+        "explore": 48,
+        "garden": 35,
+        "eat": 42,
+        "play": 44
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 1,
+        "berries": 0
+      },
+      "mockProviderAttempts": 1,
+      "highlights": []
+    },
+    {
+      "day": 10,
+      "virtualTime": 864000000,
+      "tick": 960,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 6,
+        "simulation": 288
+      },
+      "activities": {
+        "rest": 33,
+        "socialise": 103,
+        "eat": 42,
+        "explore": 48,
+        "garden": 30,
+        "play": 32
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 1,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 11,
+      "virtualTime": 950400000,
+      "tick": 1056,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 9,
+        "simulation": 288
+      },
+      "activities": {
+        "rest": 27,
+        "garden": 35,
+        "play": 37,
+        "socialise": 89,
+        "eat": 42,
+        "explore": 58
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 1,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 12,
+      "virtualTime": 1036800000,
+      "tick": 1152,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 16,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 65,
+        "socialise": 72,
+        "rest": 35,
+        "garden": 37,
+        "eat": 42,
+        "play": 37
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 1,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 13,
+      "virtualTime": 1123200000,
+      "tick": 1248,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 7,
+        "simulation": 288
+      },
+      "activities": {
+        "play": 34,
+        "socialise": 108,
+        "explore": 39,
+        "rest": 33,
+        "garden": 34,
+        "eat": 40
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 1,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 14,
+      "virtualTime": 1209600000,
+      "tick": 1344,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 14,
+        "simulation": 288
+      },
+      "activities": {
+        "play": 32,
+        "eat": 41,
+        "socialise": 82,
+        "garden": 42,
+        "explore": 58,
+        "rest": 33
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 1
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 15,
+      "virtualTime": 1296000000,
+      "tick": 1440,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 12,
+        "simulation": 288
+      },
+      "activities": {
+        "socialise": 96,
+        "eat": 40,
+        "play": 33,
+        "rest": 41,
+        "garden": 37,
+        "explore": 41
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 2,
+      "highlights": []
+    },
+    {
+      "day": 16,
+      "virtualTime": 1382400000,
+      "tick": 1536,
+      "weatherAtCheckpoint": "rain",
+      "events": {
+        "caretaker": 9,
+        "simulation": 288
+      },
+      "activities": {
+        "eat": 42,
+        "explore": 24,
+        "rest": 31,
+        "socialise": 97,
+        "garden": 48,
+        "play": 46
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 17,
+      "virtualTime": 1468800000,
+      "tick": 1632,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 11,
+        "simulation": 288
+      },
+      "activities": {
+        "eat": 42,
+        "socialise": 96,
+        "rest": 28,
+        "garden": 40,
+        "explore": 52,
+        "play": 30
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 18,
+      "virtualTime": 1555200000,
+      "tick": 1728,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 13,
+        "simulation": 288
+      },
+      "activities": {
+        "eat": 42,
+        "rest": 36,
+        "explore": 60,
+        "socialise": 85,
+        "garden": 32,
+        "play": 33
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 19,
+      "virtualTime": 1641600000,
+      "tick": 1824,
+      "weatherAtCheckpoint": "rain",
+      "events": {
+        "caretaker": 10,
+        "simulation": 288
+      },
+      "activities": {
+        "eat": 42,
+        "play": 46,
+        "rest": 37,
+        "socialise": 97,
+        "garden": 40,
+        "explore": 26
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 20,
+      "virtualTime": 1728000000,
+      "tick": 1920,
+      "weatherAtCheckpoint": "rain",
+      "events": {
+        "caretaker": 9,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 31,
+        "play": 42,
+        "eat": 42,
+        "rest": 31,
+        "garden": 48,
+        "socialise": 94
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 21,
+      "virtualTime": 1814400000,
+      "tick": 2016,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 17,
+        "narrator": 1,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 71,
+        "socialise": 88,
+        "eat": 42,
+        "rest": 29,
+        "play": 24,
+        "garden": 34
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 1,
+      "highlights": [
+        "A Familiar Bench"
+      ]
+    },
+    {
+      "day": 22,
+      "virtualTime": 1900800000,
+      "tick": 2112,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 11,
+        "simulation": 288
+      },
+      "activities": {
+        "explore": 56,
+        "garden": 31,
+        "socialise": 93,
+        "eat": 42,
+        "play": 36,
+        "rest": 30
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 23,
+      "virtualTime": 1987200000,
+      "tick": 2208,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 10,
+        "simulation": 288
+      },
+      "activities": {
+        "socialise": 93,
+        "rest": 33,
+        "eat": 42,
+        "garden": 34,
+        "explore": 45,
+        "play": 41
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 24,
+      "virtualTime": 2073600000,
+      "tick": 2304,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 14,
+        "simulation": 288
+      },
+      "activities": {
+        "play": 29,
+        "rest": 35,
+        "explore": 54,
+        "eat": 42,
+        "garden": 36,
+        "socialise": 92
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 25,
+      "virtualTime": 2160000000,
+      "tick": 2400,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 7,
+        "simulation": 288
+      },
+      "activities": {
+        "garden": 31,
+        "socialise": 93,
+        "explore": 40,
+        "play": 49,
+        "eat": 42,
+        "rest": 33
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 26,
+      "virtualTime": 2246400000,
+      "tick": 2496,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 10,
+        "simulation": 288
+      },
+      "activities": {
+        "socialise": 89,
+        "play": 28,
+        "explore": 62,
+        "eat": 42,
+        "rest": 33,
+        "garden": 34
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 27,
+      "virtualTime": 2332800000,
+      "tick": 2592,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 10,
+        "simulation": 288
+      },
+      "activities": {
+        "rest": 34,
+        "explore": 67,
+        "garden": 31,
+        "socialise": 89,
+        "eat": 42,
+        "play": 25
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 28,
+      "virtualTime": 2419200000,
+      "tick": 2688,
+      "weatherAtCheckpoint": "rain",
+      "events": {
+        "caretaker": 10,
+        "simulation": 288
+      },
+      "activities": {
+        "socialise": 113,
+        "garden": 31,
+        "play": 39,
+        "rest": 33,
+        "eat": 41,
+        "explore": 31
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 29,
+      "virtualTime": 2505600000,
+      "tick": 2784,
+      "weatherAtCheckpoint": "clear",
+      "events": {
+        "caretaker": 11,
+        "simulation": 288
+      },
+      "activities": {
+        "play": 46,
+        "rest": 35,
+        "eat": 42,
+        "socialise": 93,
+        "garden": 30,
+        "explore": 42
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    },
+    {
+      "day": 30,
+      "virtualTime": 2592000000,
+      "tick": 2880,
+      "weatherAtCheckpoint": "cloudy",
+      "events": {
+        "caretaker": 12,
+        "simulation": 288
+      },
+      "activities": {
+        "rest": 32,
+        "socialise": 99,
+        "eat": 42,
+        "play": 40,
+        "garden": 40,
+        "explore": 35
+      },
+      "quest": {
+        "id": "mystery_of_the_seed",
+        "clues": [
+          "The seed gives a gentle pulse when examined.",
+          "Its glow reflects softly in the pond.",
+          "A sheltered patch of garden feels right.",
+          "A small luminous flower leaves a seed-shaped charm."
+        ],
+        "owner": "pip",
+        "stage": 4,
+        "status": "completed"
+      },
+      "caretakerInventory": {
+        "seeds": 0,
+        "berries": 0
+      },
+      "mockProviderAttempts": 0,
+      "highlights": []
+    }
+  ],
+  "limitations": [
+    "Caretaker policy and two accepted story beats are scripted interventions, not emergent AI creativity.",
+    "The harness uses authenticated repository commands, not HTTP transport or its wall-clock rate limits.",
+    "Autonomous cottage food is unlimited; caretaker inventory is finite.",
+    "Need/relationship saturation and only gardening-driven patience development are current engine limitations.",
+    "Daily states and full event/input ledgers are retained; only the compact sample is committed.",
+    "Mock token units are not live Groq usage or a vendor bill. Hosting is unmetered.",
+    "Days cover each ordered care/story cycle followed by 96 fixed ticks, ending at the next midnight.",
+    "Interrupted/failed runs are preserved as incomplete; repeat in a new isolated world rather than resuming uncertain AI attempts."
+  ]
+}

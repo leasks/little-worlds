@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "sourceHash": "e799cc4d1a4d2454702d6a677f19b3a13cc0604a97c6eeac9c1ba890c078dc9b",
+  "config": {
+    "schemaVersion": 1,
+    "policy": "caretaker-v1",
+    "seed": 42,
+    "days": 30,
+    "narrator": "mocked",
+    "usdPerMillionMockTokens": null
+  },
+  "verified": true,
+  "semanticHashes": [
+    "a51d46c8bb31dfe1158aeefbb8e14d8ac4d0336cc31e4d02e784aff6aedff430",
+    "a51d46c8bb31dfe1158aeefbb8e14d8ac4d0336cc31e4d02e784aff6aedff430"
+  ],
+  "liveApiCalls": 0
+}

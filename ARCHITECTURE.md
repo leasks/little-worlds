@@ -1,6 +1,6 @@
 # Little Worlds architecture and implementation plan
 
-Current status: Phases 0–6 are validated locally. The original Phase 0 plan below
+Current status: Phases 0–7 are validated locally. The original Phase 0 plan below
 is retained; later checkpoint updates and OPERATOR.md/API.md describe the current
 contracts and working interface. Scheduling/deployment configuration is prepared; hosted validation/deployment
 remain pending approval and target configuration.
@@ -154,3 +154,19 @@ require verified TLS plus a dedicated restricted inherited runtime role; local
 admin URLs remain narrowed via SET ROLE. Vercel configuration and one-shot HTTP
 worker are prepared, not deployed. Backup/restore and runtime-role bootstrap are
 validated locally; remote migration/deployment still require explicit approval.
+
+## Phase 7 implementation checkpoint
+
+The local-only experiment creates fresh marked test worlds; it never accepts an
+existing live world or reads Groq keys. A versioned deterministic caretaker policy
+uses authenticated repository commands (HTTP transport/rate throttling is not part
+of this accelerated harness). Scripted mock provider inputs exercise actual
+narrator budgets, validation, operator approval, quests and outage handling.
+Explicit tick times advance the unchanged 3x clock; daily snapshots and a durable
+external-input ledger make outcomes inspectable. Each run is fresh, fail-fast and
+archived on completion/failure; interrupted runs remain incomplete, not resumable
+from uncertain AI attempts. A verifier runs two fresh worlds and compares normalized
+semantic inputs, journal, proposals, usage, snapshots and final state. Only random
+IDs, wall-clock metadata and credential material are excluded. Full raw artifacts
+stay ignored; a compact verified sample report/chronicle can be committed. Costs
+separate zero live calls from hypothetical mock token pricing and unmetered hosting.

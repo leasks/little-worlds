@@ -67,3 +67,12 @@ reject privileged/nonmember/owner logins before queries. No production connectio
 or deployment was made. Migration/provisioning scripts remain local by default;
 --remote-approved is an operator attestation after approval, not a permission
 escalation or automatic runtime grant. See DEPLOYMENT.md for review/cutover rules.
+
+Phase 7 is a local-only experiment harness with no HTTP entrypoint and no live
+provider option. It accepts only fresh marked test worlds and never reads Groq
+keys. Setup mints private scoped test credentials; game operations retain normal
+permission/precondition checks. Keys are revoked and worlds archived after runs.
+The direct repository harness does not claim HTTP rate-limit coverage. Raw exports
+are ignored/private, contain no credentials and have checksums; portable sample
+reports describe only generated test-world data. Unexpected/unknown outcomes are
+not promoted to successful experiments. No remote database operation is enabled.

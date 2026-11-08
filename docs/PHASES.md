@@ -179,6 +179,50 @@ No hosted resource, paid request, remote migration, deployment command or enviro
 configuration publication was performed. This is local readiness evidence, not a
 claim of a running production deployment or configured offsite backup retention.
 
-## Next: Phase 7
-Reproducible 30-village-day caretaker experiment, complete metrics, readable
-chronicle and report. Hosted deployment remains a separate explicitly approved step.
+## Phase 7 — First 30 Days checkpoint complete locally
+
+- Added a local-only persistent experiment runner with a versioned caretaker
+  policy, mock/disabled narrator modes, actual authenticated command validation,
+  operator approval, resources and the registered multi-stage quest.
+- Added migration 0007: immutable daily checkpoints, durable input intent/results
+  and final run/report records. Fresh worlds only; credentials revoked and worlds
+  archived. Failed/interrupted evidence is not labelled successful or resumed
+  through uncertain provider attempts.
+- Added source/artifact/semantic SHA-256 checks, complete JSON ledgers, readable
+  report/chronicle, read-only re-export and optional uniform hypothetical pricing.
+  Full raw artifacts remain ignored/private; the compact verified seed-42 sample
+  is committed under docs/experiment.
+- Two fresh 30-day runs matched the full semantic fingerprint
+  a51d46c8bb31dfe1158aeefbb8e14d8ac4d0336cc31e4d02e784aff6aedff430.
+  Each completed 2,880 ticks and 8,995 journal entries: 8,640 autonomous activities,
+  353 caretaker actions and two narrator events. The scripted seed quest completed
+  on day 5 with one charm reward. Three invalid/duplicate proposals were rejected.
+  Simulation failures: zero; two mock outage attempts did not stop ordinary life.
+- Mock requests: five, reported units 288, reserved units 2,560, two unknown usage
+  attempts. Live requests/tokens/API spend: zero. No pricing was supplied; no
+  hypothetical model bill or unmetered hosting cost is claimed.
+- Strict TypeScript/production build passed. Full Vitest with local PostgreSQL:
+  77 tests passed, including two full persistent 30-day runs, disabled mode,
+  unrelated-world guards, final record protection and an injected failure.
+- Artifact checksums passed. Re-exported report JSON was byte-identical to the
+  original. The published source fingerprint matches the current executable source.
+- A full checksum-verified local backup/restore also passed after migration 0007:
+  all 27 world-scoped tables, experiment ledgers/report and an existing tick retry
+  matched without duplicate state/history. No UI changes required browser reruns;
+  the prior Phase 6 desktop/mobile suite remains recorded above.
+
+The caretaker is rule-based and stories are scripted mock interventions, not a
+live Mac mini/Groq trial. Observations expose current balance limits: all creatures
+favored socialising, relationships reached ceilings, health stayed at 100, while
+Moss gardened more and Nim's night exploration preference remained visible.
+See EXPERIMENT.md and docs/experiment/README.md for protocol, evidence and limits.
+No paid calls, deployment, remote database migration or environment publication was
+performed. Source changes/reports are pushed to the requested Git remote.
+
+## Initial implementation milestones complete locally
+
+Phases 0–7 now have working local implementations and validation evidence. Hosted
+Supabase/Vercel connectivity, plan support, deployment, offsite backup retention
+and a live-model/remote-caretaker experiment remain separate configured/approved
+operations; they are not implied by these local checks. Follow-up balancing can
+use the recorded experiment as a baseline without rewriting its history.

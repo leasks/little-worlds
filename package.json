@@ -24,7 +24,8 @@
     "deploy:preflight": "tsx scripts/preflight.ts",
     "test:scheduler-http": "tsx scripts/smoke-scheduler.ts",
     "recovery:check": "tsx scripts/recovery-check.ts",
-    "scheduler:health": "tsx scripts/scheduler-health.ts"
+    "scheduler:health": "tsx scripts/scheduler-health.ts",
+    "experiment": "tsx scripts/experiment.ts"
   },
   "dependencies": {
     "next": "^16.0.0",

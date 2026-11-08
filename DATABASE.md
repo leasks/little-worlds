@@ -176,3 +176,14 @@ restricted inherited role membership; privileged/owner connections fail before
 application queries. The application no longer requires remote startup SET ROLE
 options. Reviewed role bootstrap, migration flags, preflight, monitoring and full
 restore procedures are in DEPLOYMENT.md; no remote migration was performed.
+
+## Phase 7 additions
+
+Migration 0007 adds RLS-protected experiment_runs, immutable daily checkpoints and
+an input-intent/result ledger. Run configuration and source hash cannot be changed
+by the runtime role. Completed/failed metadata and inputs are terminal. The
+local-only CLI creates fresh test worlds; normal game effects still use the
+restricted authenticated repositories and tick transactions. Credentials are
+revoked and worlds archived at the end. Full dumps must now include these three
+experiment tables; the dynamic recovery checker includes them automatically.
+See EXPERIMENT.md for protocol, limitations, export and reproducibility checks.
